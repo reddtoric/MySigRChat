@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "@microsoft/signalr@3.1.2",
+      "destination": "wwwroot/lib/signalr",
+      "files": [
+        "signalr.js",
+        "signalr.js.map",
+        "signalr.min.js",
+        "signalr.min.js.map"
+      ]
+    },
+    {
+      "library": "jquery-ajax-unobtrusive@3.2.6",
+      "destination": "wwwroot/lib/jquery-ajax-unobtrusive",
+      "files": [
+        "jquery.unobtrusive-ajax.js",
+        "jquery.unobtrusive-ajax.min.js"
+      ]
+    }
+  ]
+}
