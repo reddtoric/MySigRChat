@@ -1,0 +1,7 @@
+1. user clicks submit
+2. saveMessageClearInputField()
+3. if success: sendMessageWrapper()
+4. sendMessageToServer()
+5. BroadcastMessage()
+6. appendMessage()
+7. msg appears on chat
