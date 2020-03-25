@@ -1,5 +1,5 @@
 # SignalR Chat app
-A simple real-time chat app created using MVC/SignalR. This project is for learning purposes. 
+A simple real-time chat app. Created using ASP.NET Core with MVC/SignalR. This project is for learning purposes. 
 
 I followed along a [video][1] to make a chat app; it didn't work and had many bugs. 
 After spending some time debugging, making small changes and seeing what happens,
