@@ -1,5 +1,3 @@
-using System;
-
 namespace MySigRChat.Models
 {
     public class ErrorViewModel

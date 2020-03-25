@@ -1,11 +1,8 @@
-﻿const DEBUG = true;
-
+﻿
 function log(func, file, msg = null) {
-    if (DEBUG) {
-        let _msg = (msg != null) ? ": " + msg : "";
+    let _msg = (msg != null) ? ": " + msg : "";
 
-        console.log(func + " in " + file + _msg);
-    }
+    console.debug(func + " in " + file + _msg);
 }
 
 class Message {
