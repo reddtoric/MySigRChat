@@ -7,6 +7,6 @@ and looking at stackoverflow and Microsoft's MvcMovie tutorial project, I finall
 
 Topics covered: configure SignalR, SignalR Hubs, SignalR client library, send messages from any client to all connected clients
 
-Expansion ideas: user login, grouped messages, remove/edit messages, deploy test database + app
+Expansion ideas: grouped messages, remove/edit messages, deploy app with database as practice
 
 [1]: https://www.youtube.com/watch?v=RUZLIh4Vo20
