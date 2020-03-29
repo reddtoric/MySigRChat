@@ -1,5 +1,4 @@
-﻿
-function log(func, file, msg = null) {
+﻿function log(func, file, msg = null) {
     let _msg = (msg != null) ? ": " + msg : "";
 
     console.debug(func + " in " + file + _msg);
@@ -17,7 +16,13 @@ class Message {
 const inputMessage = document.getElementById('inputMessage');
 const messageList = document.getElementById('messageList');
 const messagesToPost = [];
+
 let currentUser = "";
+/* Defined in _Index.cshtml_:
+ * usernameFromView, messageBaseClass, messageSenderClass, 
+ * messageOtherSenderClass, messageDiffUserClass, 
+ * timestampClass, userClass, messageTextClass
+*/
 
 function saveMessageClearInputField() {
     messagesToPost.push(inputMessage.value);
@@ -26,7 +31,7 @@ function saveMessageClearInputField() {
 }
 
 function sendMessageWrapper() {
-    var text = messagesToPost.shift() || "";
+    let text = messagesToPost.shift() || "";
     let timestamp = new Date().toLocaleString();
 
     let message = new Message(usernameFromView, text, timestamp);
@@ -38,25 +43,28 @@ function sendMessageWrapper() {
 }
 
 function appendMessage(message) {
-    log("appendMessage", "chat.js", message.username);
     log("appendMessage", "chat.js", message.text);
-    log("appendMessage", "chat.js", message.timestamp);
 
     if (currentUser == "") {
-        currentUser = messageList.lastElementChild.getAttribute("username");
+        if (messageList.childElementCount != 0) {
+            log("", "", "currentUser: " + currentUser);
+            currentUser = messageList.lastElementChild.getAttribute("user");
+            log("", "", "currentUser: " + currentUser);
+        }
     }
+
 
     let li = document.createElement('li');
     let builtClass = messageBaseClass;
     builtClass += ((message.username == usernameFromView) ? messageSenderClass : messageOtherSenderClass);
     builtClass += ((message.username != currentUser) ? messageDiffUserClass : "");
+    
+    li.className = builtClass;
 
 
     if (currentUser != message.username) {
         currentUser = message.username;
     }
-
-    li.className = builtClass;
 
 
     let timestamp = document.createElement('span');
