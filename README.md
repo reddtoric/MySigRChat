@@ -5,8 +5,16 @@ I followed along a [video][1] to make a chat app; it didn't work and had many bu
 After spending some time debugging, making small changes and seeing what happens,
 and looking at stackoverflow and Microsoft's MvcMovie tutorial project, I finally got a basic working chat app.
 
+Other guides used: 
+- [Azure: Quickstart: Create an ASP.NET Core web app in Azure][2]  
+- [AWS RDS: Creating a Microsoft SQL Server DB Instance and Connecting to a DB Instance][3]  
+  **Note:** RDS Error 258: Click on the **VPC** > **Security Groups** on the left > select associated security group > **Actions** > **Edit inbound rules** > add rule with **Type: MS SQL** and **Source: Anywhere**
+
+
 Topics covered: configure SignalR, SignalR Hubs, SignalR client library, send messages from any client to all connected clients
 
-Expansion ideas: grouped messages, remove/edit messages, deploy app with database as practice
+Expansion ideas: grouped messages, remove/edit messages
 
 [1]: https://www.youtube.com/watch?v=RUZLIh4Vo20
+[2]: https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-dotnet
+[3]: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.SQLServer.html
