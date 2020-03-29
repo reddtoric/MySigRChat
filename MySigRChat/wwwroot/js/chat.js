@@ -17,6 +17,7 @@ class Message {
 const inputMessage = document.getElementById('inputMessage');
 const messageList = document.getElementById('messageList');
 const messagesToPost = [];
+let currentUser = "";
 
 function saveMessageClearInputField() {
     messagesToPost.push(inputMessage.value);
@@ -41,26 +42,34 @@ function appendMessage(message) {
     log("appendMessage", "chat.js", message.text);
     log("appendMessage", "chat.js", message.timestamp);
 
+    if (currentUser == "") {
+        currentUser = messageList.lastElementChild.getAttribute("username");
+    }
+
     let li = document.createElement('li');
-    let baseClass = "list-group-item rounded my-1 py-0 px-3";
-    if (message.username == usernameFromView) {
-        li.className = baseClass + " bg-primary text-right";
+    let builtClass = messageBaseClass;
+    builtClass += ((message.username == usernameFromView) ? messageSenderClass : messageOtherSenderClass);
+    builtClass += ((message.username != currentUser) ? messageDiffUserClass : "");
+
+
+    if (currentUser != message.username) {
+        currentUser = message.username;
     }
-    else {
-        li.className = baseClass + " bg-light";
-    }
+
+    li.className = builtClass;
 
 
     let timestamp = document.createElement('span');
     timestamp.innerHTML = message.timestamp;
-    timestamp.className = "font-italic";
+    timestamp.className = timestampClass;
 
     let sender = document.createElement('span');
     sender.innerHTML = message.username;
-    sender.className = "font-weight-bold";
+    sender.className = userClass;
 
     let text = document.createElement('p');
     text.innerHTML = message.text;
+    text.className = messageTextClass;
     
 
     li.appendChild(timestamp);
