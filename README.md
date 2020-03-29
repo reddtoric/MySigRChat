@@ -17,7 +17,7 @@ Other guides used:
 
 Topics covered: configure SignalR, SignalR Hubs, SignalR client library, send messages from any client to all connected clients
 
-Expansion ideas: grouped messages, remove/edit messages
+Expansion ideas/to-do: remove/edit messages, email sender
 
 [1]: https://www.youtube.com/watch?v=RUZLIh4Vo20
 [2]: https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-dotnet
