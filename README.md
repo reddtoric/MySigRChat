@@ -1,3 +1,5 @@
+<img src="./preview.png" height="300"/>
+
 # SignalR Chat app
 A simple real-time chat app. Created using ASP.NET Core with MVC/SignalR. This project is for learning purposes.  
 **Note**: This app is hosted with Azure & AWS RDS with the free packages so the [live site][4] may not be active.  
